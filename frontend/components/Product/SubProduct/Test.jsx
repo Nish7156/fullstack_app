@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import img1 from "../public/images/clementines.png";
+import img1 from "../../../public/images/clementines.png";
 
 const P = () => {
   return (

@@ -76,7 +76,7 @@ function DynamicFooter() {
       <div className="flex flex-col pt-8 border-t col-span-full sm:col-span-1 md:col-start-4 xl:col-start-auto md:col-span-4 xl:col-span-3 2xl:ltr:pl-7 2xl:rtl:pr-7 3xl:ltr:pl-16 3xl:rtl:pr-16 sm:pt-0 sm:border-t-0 border-border-three ">
         <h3 className="text-brand-dark text-base lg:text-[17px] lg:leading-7 font-medium mb-4 lg:mb-6 lg:pb-0.5">Subscribe Now</h3>
         <p className="text-brand-muted text-sm leading-7 lg:leading-[27px] lg:text-15px lg:-mt-1 max-w-[400px]">Subscribe your email for newsletter and featured news based on your interest</p>
-        <form novalidate=" relative mt-5 max-w-[400px]">
+        {/* <form novalidate=" relative mt-5 max-w-[400px]">
           <span className="flex items-center absolute ltr:left-0 rtl:right-0 top-0 h-12 px-3.5 transform">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg w-4 2xl:w-[18px] h-4 2xl:h-[18px]">
               <g clip-path="url(#clip0)">
@@ -97,7 +97,7 @@ function DynamicFooter() {
               </defs>
             </svg>
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import DynamicFooter from '../components/DynamicFooter'
-import Footer from '../components/Footer'
+import DynamicFooter from '../components/Footer/DynamicFooter'
+import Footer from '../components/Footer/Footer'
 import Header from '../components/Header'
 
 function Layout({children}) {

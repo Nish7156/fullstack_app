@@ -1,6 +1,6 @@
-
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function SignIn() {
   const router = useRouter();
@@ -21,50 +21,106 @@ export default function SignIn() {
 
   return (
     <>
-      <div className="w-full max-w-xs">
-        <h1>Sign In</h1>
-        <form
-          className="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
-          onSubmit={onSubmit}
+      <div>
+        <div
+          className="flex items-center justify-center h-screen bg-white sm:bg-gray-100"
+          dir="ltr"
         >
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              for="email"
-            >
-              Email
-            </label>
-            <input
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              id="email"
-              name="email"
-              type="email"
-              value="test@gmail.com"
-              placeholder="email"
-            />
+          <div className="m-auto bg-white max-w-[420px] w-full bg-light sm:shadow p-5 sm:p-8 rounded">
+            <h3 className="mt-4 mb-6 text-base italic text-center text-gray-500">
+              Login to admin
+            </h3>
+            <form onSubmit={onSubmit}>
+              <div className="mb-4">
+                <label
+                  for="email"
+                  className="block mb-3 text-sm font-semibold leading-none text-body-dark"
+                >
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value="test@gmail.com"
+                  placeholder="email"
+                  className="flex items-center w-full h-12 px-4 text-sm transition duration-300 ease-in-out border rounded appearance-none text-heading focus:outline-none focus:ring-0 border-border-base focus:border-accent "
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  aria-invalid="false"
+                />
+              </div>
+              <div className="mb-4">
+                <div className="flex items-center justify-between mb-3">
+                  <label
+                    for="password"
+                    className="text-sm font-semibold leading-none text-body-dark"
+                  >
+                    Password
+                  </label>
+                </div>
+                <div className="relative">
+                  <input
+                    id="password"
+                    name="password"
+                    value="test@7156"
+                    type="password"
+                    className="flex items-center w-full h-12 px-4 text-sm transition duration-300 ease-in-out border rounded appearance-none text-heading focus:outline-none focus:ring-0 border-border-base focus:border-accent"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  />
+                  <label
+                    for="password"
+                    className="absolute -mt-2 ltr:right-4 rtl:left-4 rtl:right-auto top-5 text-body"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      ></path>
+                    </svg>
+                  </label>
+                </div>
+              </div>
+              <button
+                data-variant="normal"
+                className="inline-flex items-center justify-center flex-shrink-0 w-full h-12 px-5 py-0 font-semibold leading-none text-white transition duration-300 ease-in-out bg-green-500 border border-transparent rounded outline-none focus:outline-none focus:shadow focus:ring-1 focus:ring-accent-700 bg-accent text-light hover:bg-accent-hover"
+              >
+                Login
+              </button>
+            </form>
+            <div className="relative flex flex-col items-center justify-center mt-8 mb-6 text-sm text-heading sm:mt-11 sm:mb-8">
+              <hr className="w-full" />
+              <span className="absolute start-2/4 -top-2.5 px-2 -ms-4 bg-light">
+                Or
+              </span>
+            </div>
+            <div className="text-sm text-center sm:text-base text-body">
+              Don't have any account?
+              <Link href={"register"} legacyBehavior>
+                Register as Shop Owner
+              </Link>
+            </div>
           </div>
-
-          <div className="mb-6">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              for="password"
-            >
-              Password
-            </label>
-            <input
-              className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              id="password"
-              name="password"
-              value="test@7156"
-              type="password"
-              placeholder="******************"
-            />
-            {/* <p className="text-xs italic text-red-500">Please choose a password.</p> */}
-          </div>
-          <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline">
-            Sign In
-          </button>
-        </form>
+        </div>
       </div>
     </>
   );
